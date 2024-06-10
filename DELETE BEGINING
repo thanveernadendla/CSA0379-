@@ -1,0 +1,27 @@
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    def delete_beginning(self):
+        if self.head is None:
+            return
+        self.head = self.head.next
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+llist = LinkedList()
+llist.head = Node(1)
+second = Node(2)
+third = Node(3)
+llist.head.next = second
+second.next = third
+print("Linked list before deletion:")
+llist.print_list()
+llist.delete_beginning()
+print("\nLinked list after deletion:")
+llist.print_list()
